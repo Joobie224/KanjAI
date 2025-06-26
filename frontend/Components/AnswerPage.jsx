@@ -14,7 +14,9 @@ function AnswerPage() {
   useEffect(() => {
     if (queryParam) {
       axios
-        .post("http://localhost:3000/api/ask", { question: queryParam })
+        .post("https://kanjai-backend.onrender.com/api/ask", {
+          question: queryParam,
+        })
         .then((res) => setAnswer(res.data.answer))
         .catch(() => setAnswer("Sorry, something went wrong :("))
         .finally(() => setLoading(false));

@@ -33,7 +33,7 @@ function KanjiCategory() {
   const handleToggleFavorite = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/kanji/${selectedKanji.character}/mylist`,
+        `https://kanjai-backend.onrender.com/kanji/${selectedKanji.character}/mylist`,
         { method: "PATCH" }
       );
 

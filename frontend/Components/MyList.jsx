@@ -10,7 +10,7 @@ function MyList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/mylist")
+      .get("https://kanjai-backend.onrender.com/mylist")
       .then((res) => setMyList(res.data))
       .catch((err) => console.error("failed to fetch favorites:", err));
   }, []);
@@ -49,7 +49,7 @@ function MyList() {
           if (!selectedKanji) return;
           try {
             const res = await axios.patch(
-              `http://localhost:3000/kanji/${selectedKanji.character}/mylist`
+              `https://kanjai-backend.onrender.com/kanji/${selectedKanji.character}/mylist`
             );
             const updated = res.data;
 
@@ -58,7 +58,9 @@ function MyList() {
               favorited: updated.favorited,
             }));
 
-            const refreshed = await axios.get("http://localhost:3000/mylist");
+            const refreshed = await axios.get(
+              "https://kanjai-backend.onrender.com/mylist"
+            );
             setMyList(refreshed.data);
           } catch (error) {
             console.error("Error toggling favorite:", err);

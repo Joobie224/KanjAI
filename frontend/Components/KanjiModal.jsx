@@ -34,9 +34,12 @@ function KanjiModal({ open, onClose, kanji, favorited, onToggleFavorite }) {
     setMnemonic("");
     setMnemonicLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/api/mnemonic", {
-        kanji: kanji.character,
-      });
+      const response = await axios.post(
+        "https://kanjai-backend.onrender.com/api/mnemonic",
+        {
+          kanji: kanji.character,
+        }
+      );
 
       setMnemonic(response.data.mnemonic);
     } catch (error) {
