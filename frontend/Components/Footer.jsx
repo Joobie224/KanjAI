@@ -15,7 +15,7 @@ function Footer() {
             Contact
           </Link>
           <a
-            href="https://github.com/yourrepo"
+            href="https://github.com/Joobie224/KanjAI"
             className="hover:text-black"
             target="_blank"
             rel="noopener noreferrer"
