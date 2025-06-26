@@ -63,13 +63,13 @@ function NavBar() {
           My List
         </Link>
         <SignedOut>
-          <SignInButton mode="modal">
+          <SignInButton mode="modal" afterSignInUrl="/">
             <button className="rounded-full bg-black text-white px-4 py-1.5 font-[DM_Sans] font-regular">
               Sign In
             </button>
           </SignInButton>
         </SignedOut>
-        <SignedIn>
+        <SignedIn afterSignInUrl="/">
           <UserButton afterSignOutUrl="/" />
         </SignedIn>
       </div>
